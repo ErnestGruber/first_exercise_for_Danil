@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Town", "Town\Town.csproj", "{CC1005FB-8DCF-4C8C-A19D-62383CB48723}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTown", "AppTown\AppTown.csproj", "{1079C389-2D9E-4901-B42A-3B9118971749}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC1005FB-8DCF-4C8C-A19D-62383CB48723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1005FB-8DCF-4C8C-A19D-62383CB48723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1005FB-8DCF-4C8C-A19D-62383CB48723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1005FB-8DCF-4C8C-A19D-62383CB48723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1079C389-2D9E-4901-B42A-3B9118971749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1079C389-2D9E-4901-B42A-3B9118971749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1079C389-2D9E-4901-B42A-3B9118971749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1079C389-2D9E-4901-B42A-3B9118971749}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
