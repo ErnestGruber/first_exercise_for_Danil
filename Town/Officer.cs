@@ -1,15 +1,15 @@
 ﻿namespace Town;
 
-public class Officer: Town.Villagers
+public class Officer: Villagers
 {
     public Officer(string nickname, string firstName, string secondName, DateTime birthdays, int balance, bool sex):base(nickname,  firstName,  secondName,  birthdays,  balance,  sex)
     {
         
     }
-    public void enjoy()
+    public string Enjoy()
     {
-        Console.WriteLine("listen to the groans of the inhabitants");
-        this.Helth = this.Helth+10;
+        this.Health = this.Health+10;
+        return ("listen to the groans of the inhabitants");
     }
     
 }

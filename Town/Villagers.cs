@@ -1,50 +1,35 @@
-﻿using System.Net.Sockets;
-using Microsoft.VisualBasic.CompilerServices;
-
-namespace Town;
+﻿namespace Town;
 
 public abstract class Villagers
 {
-    private string first_Name; 
-    private string second_Name;
-    private string nickname;
-    private DateTime birthdays;
-    public int balance;
-    private bool sex;
-    public int Helth;
+    private string _firstName; 
+    private string _secondName;
+    private string _nickname;
+    private DateTime _birthdays;
+    protected int Balance;
+    private bool _sex;
+    protected int Health;
     public Villagers(string nickname, string firstName, string secondName, DateTime birthdays, int balance, bool sex)
     {
-        this.nickname = nickname;
-        first_Name = firstName;
-        second_Name = secondName;
-        this.birthdays = birthdays;
-        this.balance = balance;
-        this.sex = sex;
-        this.Helth = 100;
+        this._nickname = nickname;
+        _firstName = firstName;
+        _secondName = secondName;
+        this._birthdays = birthdays;
+        this.Balance = balance;
+        this._sex = sex;
+        this.Health = 100;
     }
     
-    public void getInfo()
+    public string Informer()
     {
-        Console.Write(this.nickname +" ");
-        Console.Write(this.first_Name+ " ");
-        Console.Write(this.second_Name+ " \n");
-        Console.WriteLine("job title: "+ this.ToString());
-        Console.WriteLine(this.balance + " - his|her balance");
-        Console.WriteLine(this.birthdays + " - date birthdays");
-        if (this.sex==true)
-        {
-            Console.WriteLine("sex - men");
-        }else
-        {
-            Console.WriteLine("sex - woman");
-        }
-        Console.WriteLine(this.Helth + " - Health now \n");
+
+        return (_nickname +" "+
+        _firstName+ " "+_secondName+ " \n"+"job title: "+ ToString()+ "\n"+(Balance + " - his|her balance \n")+
+        _birthdays + " - date birthdays \n"+ (_sex ? "sex - man\n" : "sex - woman\n")+Health+"Health now") ;
     }
-    public void getBIO()
+    public string BioInformation()
     {
-        Console.Write(this.nickname +" ");
-        Console.Write(this.first_Name+ " ");
-        Console.Write(this.second_Name+ " \n");
+        return _nickname + _firstName + _secondName + "\n";
     }
     
 }

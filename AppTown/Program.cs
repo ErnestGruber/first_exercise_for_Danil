@@ -5,7 +5,7 @@ List<Villagers> village = new List<Villagers>()
 {
     new Peasant("humpbacked", "David", "Fisher", new DateTime(1844, 1, 9), 100, true),
     new Peasant("conky", "Ernest", "Fisher", new DateTime(1847, 5, 1), 45, false),
-    new Officer("greedy1", "Albedo", "herrum", new DateTime(1825, 10, 1), 45, false),
+    new Officer("greedy1", "Albedo", "Herrum", new DateTime(1825, 10, 1), 45, false),
 };
 void Command(int i)
 {
@@ -28,11 +28,11 @@ void ManageResident()
 {
     int number = 0;
     Console.WriteLine("set your villagers (number):\n");
-    foreach (var VARIABLE  in  village)
+    foreach (var variable  in  village)
     {
         Console.Write(number++ + "----");
         
-        VARIABLE.getBIO();
+        Console.Write(variable.BioInformation());
     };
     number  =Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("this villager has the following features:");
@@ -48,8 +48,6 @@ void ManageResident()
         default:
             return;
     }
-
-    
 }
 
 void OfficerAction(Officer village)
@@ -59,12 +57,13 @@ void OfficerAction(Officer village)
     switch (i)
     {
         case  1:
-            village.enjoy();
+            Console.Write(village.Enjoy());
             break;
         default:
             return;
     }
 }
+
 void PeasantAction( Peasant village)
 {
     Console.WriteLine("Peason action: \n 1) plow");
@@ -72,12 +71,14 @@ void PeasantAction( Peasant village)
     switch (i)
     {
       case  1:
-          village.plow();
+          Console.Write(village.Plow());
           break;
       default:
           return;
     }
 }
+
+
 void CreateVillage()
 {
     Console.WriteLine("Set his/her nickname \n");
@@ -111,14 +112,12 @@ void CreateVillage()
     {
         case 1:
             village.Add(new Peasant( nickname,  first_Name,  second_Name,  birthdays,  balance,  sex));
-            Console.WriteLine("You successfully add new Peasant");
-            village[village.Count-1].getInfo();
+            Console.WriteLine("You successfully add new Peasant" + village[village.Count-1].Informer());
             Main();
             break;
         case 2: 
             village.Add(new Officer( nickname,  first_Name,  second_Name,  birthdays,  balance,  sex));
-            Console.WriteLine("You successfully add new Officer");
-            village[village.Count-1].getInfo();
+            Console.WriteLine("You successfully add new Officer" + village[village.Count-1].Informer());
             Main();
             break;
     }
@@ -132,15 +131,15 @@ void Main()
     {
             Console.Write("Hello, my King \n now in your town "+village.Count+" village :\n ");
             Thread.Sleep(2000);
-            foreach (var VARIABLE in village)
-            {   
-                VARIABLE.getInfo();
+            foreach (var villagers in village)
+            {
+                Console.Write(villagers.Informer());
             };
             first_login = true;
             Thread.Sleep(2000);
     }
 
-    Console.WriteLine("what are you going to do? \n 0 - create new village \t 1 - manage residents \t  out of programm");
+    Console.WriteLine("what are you going to do? \n 0 - create new village \t 1 - manage residents \t  out of program");
     int move = Convert.ToInt32(Console.ReadLine());
     
     Command(move);
